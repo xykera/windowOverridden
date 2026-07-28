@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Window Name Overridden — VWO Heatmap Test</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    window._vwo_pc_custom = {
+      t: 100, // track
+      a: 100  // analyze
+    };
+  </script>
+
+  <!-- Start VWO Async SmartCode -->
+  <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+  <script type="text/javascript" id="vwoCode">
+window._vwo_code || (function() {
+var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1].split('&')[0] : '808235',
+version=2.1,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+  </script>
+  <!-- End VWO Async SmartCode -->
+
+  <!-- Critical: clear window.name after SmartCode (matches winNameOverriden test case) -->
+  <script>window.name = "";</script>
+</head>
+<body>
+  <div class="status-bar" id="statusBar">
+    <span>window.name = <code id="windowNameValue">""</code></span>
+    <span>Account: <code id="accountId">—</code></span>
+    <span>Pass <code>?id=YOUR_ACCOUNT_ID</code> to override</span>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <h1 class="logo">Window Name Overridden</h1>
+      <p class="subtext">VWO heatmap click-tracking test page</p>
+    </div>
+    <form class="login-form" onsubmit="return false;">
+      <label>
+        Email
+        <input id="emailBox" type="email" placeholder="you@example.com">
+      </label>
+      <label>
+        Password
+        <input id="passwordBox" type="password" placeholder="••••••••">
+      </label>
+      <label>
+        Hint
+        <input id="hint" type="text" placeholder="VWO">
+      </label>
+      <button type="button" id="login_Button" class="btn">Login</button>
+    </form>
+  </header>
+
+  <nav class="nav">
+    <button type="button" class="nav-item">Home</button>
+    <button type="button" class="nav-item">What's New</button>
+    <button type="button" class="nav-item">Specials</button>
+    <button type="button" class="nav-item">My Account</button>
+  </nav>
+
+  <section class="hero-tabs">
+    <div class="tablist" role="tablist">
+      <button type="button" class="tab active" data-tab="featured" role="tab">Featured Item</button>
+      <button type="button" class="tab" data-tab="best" role="tab">Best Seller</button>
+      <button type="button" class="tab" data-tab="discount" role="tab">Summer Discount</button>
+      <button type="button" class="tab" data-tab="premium" role="tab">Premium Product</button>
+      <button type="button" class="tab" data-tab="gift" role="tab">Gift Idea</button>
+    </div>
+    <div class="tab-panels">
+      <div class="tab-panel active" id="panel-featured">
+        <div>
+          <h2>Apple iPhone 6</h2>
+          <p>Click targets across this page help exercise VWO heatmap recording when <code>window.name</code> has been cleared.</p>
+          <a href="#products" class="btn linkUpdate">Read More</a>
+        </div>
+        <div class="slide-visual slide-a" aria-hidden="true"></div>
+      </div>
+      <div class="tab-panel" id="panel-best">
+        <div>
+          <h2>Xbox One</h2>
+          <p>Use these tabs and buttons to generate click density for heatmap verification.</p>
+          <a href="#products" class="btn linkUpdate">Read More</a>
+        </div>
+        <div class="slide-visual slide-b" aria-hidden="true"></div>
+      </div>
+      <div class="tab-panel" id="panel-discount">
+        <div>
+          <h2>Playstation 4</h2>
+          <p>Summer discount panel — another region for click and scroll heatmap coverage.</p>
+          <a href="#products" class="btn linkUpdate">Read More</a>
+        </div>
+        <div class="slide-visual slide-c" aria-hidden="true"></div>
+      </div>
+      <div class="tab-panel" id="panel-premium">
+        <div>
+          <h2>Microsoft Surface</h2>
+          <p>Premium product panel with more interactive surface area.</p>
+          <a href="#products" class="btn linkUpdate">Read More</a>
+        </div>
+        <div class="slide-visual slide-d" aria-hidden="true"></div>
+      </div>
+      <div class="tab-panel" id="panel-gift">
+        <div>
+          <h2>Vizio Smart TV</h2>
+          <p>Gift idea panel for additional heatmap click samples.</p>
+          <a href="#products" class="btn linkUpdate">Read More</a>
+        </div>
+        <div class="slide-visual slide-e" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="clickTypes">
+    <h3>Click type targets</h3>
+    <p class="muted">Use these areas to generate normal, rage, dead, and error clicks for heatmap / session analysis.</p>
+    <div class="click-grid">
+      <div class="click-cell">
+        <h4 id="normal1">Normal Click</h4>
+        <input id="normalclick" type="text" placeholder="Type or click">
+      </div>
+      <div class="click-cell">
+        <h4 id="rage1">Rage Clicks</h4>
+        <input id="rageclicks" type="text" placeholder="Click rapidly">
+      </div>
+      <div class="click-cell">
+        <h4 id="dead1">Dead Clicks</h4>
+        <p class="hint">Non-interactive label — click here</p>
+      </div>
+      <div class="click-cell">
+        <h4 id="error1">Error Click</h4>
+        <input id="errorclicks1" type="text" placeholder="Throws on click">
+      </div>
+      <div class="click-cell">
+        <h4 id="ragedead1">Rage and Dead Clicks</h4>
+        <p class="hint">Click many times on this inert area</p>
+      </div>
+      <div class="click-cell">
+        <h4 id="rageerror1">Rage and Error Clicks</h4>
+        <input id="rageerrorclicks1" type="text" placeholder="Rage + error">
+      </div>
+      <div class="click-cell">
+        <h4 id="deaderror1">Dead and Error Click</h4>
+        <p class="hint">Click this label to throw</p>
+      </div>
+      <div class="click-cell">
+        <h4 id="deadrageerror1">Dead, Rage and Error</h4>
+        <p class="hint">Multi-mode error target</p>
+      </div>
+    </div>
+    <div id="dynamicInputs" class="dynamic-inputs"></div>
+    <button type="button" id="addDynamic" class="btn">Add another text input</button>
+  </section>
+
+  <section class="three-col">
+    <div class="panel">
+      <h3>Dynamic ID text box</h3>
+      <p class="muted">Input id changes on every reload.</p>
+      <div id="dynamicID">
+        <input class="dynamicID" type="text" name="myInputs[]" placeholder="Dynamic id field">
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost">Button 1</button>
+        <button type="button" class="btn btn-ghost">Button 2</button>
+        <button type="button" class="btn btn-ghost">Button 3</button>
+        <button type="button" class="btn btn-ghost">Button 4</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3 id="openModalDialog">Open Modal Dialog</h3>
+      <p class="muted">Test overlay / modal click recording.</p>
+      <button type="button" id="modal" class="btn" data-open-modal>Click to open Modal</button>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost">Button 1</button>
+        <button type="button" class="btn btn-ghost">Button 2</button>
+        <button type="button" class="btn btn-ghost">Button 3</button>
+        <button type="button" class="btn btn-ghost">Button 4</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 id="heading2">Heading 2 Style</h2>
+      <p class="muted">Extra elements for page density.</p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-ghost">Button 1</button>
+        <button type="button" class="btn btn-ghost">Button 2</button>
+        <button type="button" class="btn btn-ghost">Button 3</button>
+        <button type="button" class="btn btn-ghost">Button 4</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="three-col">
+    <ul class="list-group">
+      <li id="category-one">Category One</li>
+      <li id="category-two">Category Two</li>
+      <li id="category-three">Category Three</li>
+      <li id="category-four">Category Four</li>
+      <li id="category-five">Category Five</li>
+    </ul>
+
+    <div class="panel">
+      <h2 id="choose">Choose an option</h2>
+      <p class="muted">Checkbox interactions for form heatmaps.</p>
+      <label class="check"><input type="checkbox" value="1"> Option 1</label>
+      <label class="check"><input type="checkbox" value="2"> Option 2</label>
+      <label class="check"><input type="checkbox" value="3" disabled> Option 3 (disabled)</label>
+    </div>
+
+    <div class="panel">
+      <h2>Choose a radio button</h2>
+      <p class="muted">Radio interactions for form heatmaps.</p>
+      <label class="check"><input type="radio" name="optradio"> Option 1</label>
+      <label class="check"><input type="radio" name="optradio"> Option 2</label>
+      <label class="check"><input type="radio" name="optradio" disabled> Option 3 (disabled)</label>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <h3>Products</h3>
+    <div class="product-grid">
+      <article class="product" id="sg5">
+        <div class="product-img img-1"></div>
+        <div class="product-body">
+          <h4>Samsung Galaxy S5 <span>$699.99</span></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="reviews">15 Reviews ★★★★★</p>
+          <button type="button" class="btn btn-sm">Add to cart</button>
+        </div>
+      </article>
+      <article class="product" id="xbox">
+        <div class="product-img img-2"></div>
+        <div class="product-body">
+          <h4>Xbox One <span>$399.99</span></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="reviews">8 Reviews ★★★★☆</p>
+          <button type="button" class="btn btn-sm">Add to cart</button>
+        </div>
+      </article>
+      <article class="product" id="ps4">
+        <div class="product-img img-3"></div>
+        <div class="product-body">
+          <h4>Playstation 4 <span>$399.99</span></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="reviews">4 Reviews ★★★★★</p>
+          <button type="button" class="btn btn-sm">Add to cart</button>
+        </div>
+      </article>
+      <article class="product" id="smartTv">
+        <div class="product-img img-4"></div>
+        <div class="product-body">
+          <h4>Vizio Smart TV <span>$599.99</span></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="reviews">12 Reviews ★★★★☆</p>
+          <button type="button" class="btn btn-sm">Add to cart</button>
+        </div>
+      </article>
+      <article class="product" id="msSurface">
+        <div class="product-img img-5"></div>
+        <div class="product-body">
+          <h4>Microsoft Surface <span>$499.99</span></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="reviews">9 Reviews ★★☆☆☆</p>
+          <button type="button" class="btn btn-sm">Add to cart</button>
+        </div>
+      </article>
+      <article class="product" id="iphone">
+        <div class="product-img img-6"></div>
+        <div class="product-body">
+          <h4>iPhone 5 <span>$599.99</span></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="reviews">22 Reviews ★★★★★</p>
+          <button type="button" class="btn btn-sm">Add to cart</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Follow us</p>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="copy">MyStore Copyright © 2026 — Terms · Privacy</p>
+  </footer>
+
+  <div id="mySpecials" class="modal" hidden>
+    <div class="modal-dialog" role="dialog" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h4 id="modalTitle">Special Message</h4>
+        <button type="button" class="btn btn-ghost" data-close-modal aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <label>
+          Message
+          <textarea rows="6" placeholder="Type a message…"></textarea>
+        </label>
+        <button type="button" class="btn" data-close-modal>Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
