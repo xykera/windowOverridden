@@ -1,12 +1,11 @@
 (function () {
-  // Show current window.name + account id from query
+  // Show current window.name + account id
   var nameEl = document.getElementById("windowNameValue");
   var accountEl = document.getElementById("accountId");
   if (nameEl) {
     nameEl.textContent = JSON.stringify(window.name);
   }
-  var params = new URLSearchParams(window.location.search);
-  var accountId = params.get("id") || "808235";
+  var accountId = "1260994";
   if (accountEl) {
     accountEl.textContent = accountId;
   }
