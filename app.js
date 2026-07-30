@@ -5,7 +5,7 @@
   if (nameEl) {
     nameEl.textContent = JSON.stringify(window.name);
   }
-  var accountId = "1260994";
+  var accountId = "1185298";
   if (accountEl) {
     accountEl.textContent = accountId;
   }
